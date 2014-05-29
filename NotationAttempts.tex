@@ -1,8 +1,11 @@
 \documentclass{amsart}
 \usepackage{amsmath}
+\usepackage{graphicx}
 
 \newcommand{\pp}[2][-2]{\ensuremath ^{#2}\hspace*{#1 pt}}
 %% in a subscript put in -1 pt rather than the default: -2 pt
+\newcommand*{\smallp}[1]{\scalebox{.75}{\ensuremath#1}}
+\newcommand*{\subsmallp}[1]{\scalebox{.5}{\ensuremath#1}}
 
 \begin{document} Consider the braid $\pp p B$ in $B_{pk}$. Not bad $\ldots$
 
@@ -12,6 +15,12 @@ Closure?? $\widehat{\pp pB B'}$ vs. $\widehat{\alpha_p\gamma}$. what about $\tex
 
 Just say that $\alpha_p\in B_{pk}$ is the $p$-copy of $\alpha\in B_k$
 
-$\Phi_{\alpha_p}^L$ and $\Phi_{\alpha_p\beta}^L$ and $\widehat{\alpha_p\gamma}$ (or $\hat{\alpha_p\beta}$)
+$\Phi_{\imath_p\subsmallp(\alpha\subsmallp)}^L$ and $\Phi_{\beta(\alpha)}^L$ and $\widehat{\beta(\alpha)}$ (or $\hat{\beta(\alpha)}$)
+
+$\gamma$ vs $\bar\gamma$
+
+$\imath_{\hspace*{-1pt}p}\hspace*{-.5pt}\smallp(\alpha\smallp)$
+
+$\Phi_{\imath_{\hspace*{-1pt}p}\hspace*{-.5pt}\subsmallp(\alpha\subsmallp)}^L$ and $\Phi_{\beta\subsmallp(\alpha\subsmallp)}^L$ or... $\Phi_{\gamma\subsmallp(\alpha\subsmallp)}^L$ and $\widehat{\beta\smallp(\alpha\smallp)}$ (or $\hat{\beta\smallp(\alpha\smallp)}$)
 
 \end{document}
