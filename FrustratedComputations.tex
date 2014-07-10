@@ -1,0 +1,57 @@
+\documentclass{amsart}
+\usepackage{amsmath,amssymb,graphicx}
+\usepackage{mathrsfs}
+
+\newcommand*{\smallp}[1]{\scalebox{.75}{\ensuremath#1}}
+\newcommand*{\subsmallp}[1]{\scalebox{.5}{\ensuremath#1}}
+
+\newcommand{\pp}[2][p]{\imath_{\hspace*{-1pt}#1}\hspace*{-.5pt}\smallp(#2\smallp)}
+\newcommand{\subpp}[2][p]{\imath_{\hspace*{-1pt}#1}\hspace*{-.5pt}\subsmallp(#2\subsmallp)}
+
+\begin{document}
+
+Why might $\epsilon(\sum_{r=1}^pv_ra_{rp}) = 0$?
+
+\begin{enumerate}
+\item It suffices to show that $\epsilon(\sum_{r=1}^pv_ra_{rp})=\epsilon(w_{2p+1,p})$.
+
+
+
+\item It suffices to show that $\epsilon(\phi_{\subpp\tau}^n(-a_{2p+1,p}))=0$.
+
+Note that $-a_{2p+1,p} = \phi_{\subpp\tau}(\sum_{S\subset X_n^{(p)}}(-1)^{|S|}a_{p+1,s_1}a_{s_1,s_2}\ldots a_{s_k,np})$
+
+Well, since $\phi_{\subpp\alpha}({\bf A}) = \Phi_{\subpp\alpha}^L{\bf A}\Phi_{\subpp\alpha}^R$ and so for $i>p$ and $j>p$,
+	$\epsilon(a_{ij}) = \epsilon(\phi_{\subpp\alpha}(a_{ij}))$ and so
+
+	\begin{align*}
+	\sum_{S\subset X_n^{(p)}}(-1)^{|S|}\epsilon(a_{p+1,s_1}a_{s_1,s_2}\ldots a_{s_k,np})	
+				&=	\sum_{S\subset X_n^{(p)}}(-1)^{|S|}\epsilon(\phi_{\subpp\alpha}(a_{p+1,s_1}a_{s_1,s_2}\ldots a_{s_k,np}))\\
+				&=	\epsilon(\phi_{\subpp\tau}^n(-a_{2p+1,p}))\\
+	\end{align*}
+
+\item It also suffices to show that $\epsilon(\sum_{S\subset X_3^{(p)}}(-1)^{|S|}a_{2p+1,s_1}a_{s_1,s_2}\ldots a_{s_k,np}) = 0$. This was verified for $T((4,2),(5,1))$.
+
+\item Along another line of thought\ldots Each of the entries in $\Phi_{22}^{n+1}$ are sent to same place as entries in $\Phi_{12}^2$ and the first row of this looks like $w_{2p+1,j}$ for $p+1\le j\le 2p$. Because of this, $\epsilon(w_{2p+1,j}) = 0$ for $p+1<j\le 2p$ and $\epsilon(w_{2p+1,p+1}) = 1$. Hence, $\epsilon(w_{2p+1,p}) = \epsilon(-a_{2p+1,p}) + \epsilon(a_{2p+1,p+1}a_{p+1,p})$. Note that $1=\epsilon(w_{2p+1,p+1}) = \epsilon(-a_{2p+1,p+1})$ and so 
+	\[\epsilon(a_{2p+1,p}) = -\epsilon(a_{p+1,p}).\]
+
+Now, an argument like you give in the paper so far would show that $\epsilon(a_{2p+1,p})=0$ if $n=3+1$. That is, you may be able to just pass the buck up to the next row... and have an argument that $\epsilon(a_{(n-1)p+1,p}) = 0$.
+
+Let's just make sure:
+
+{\bf Claim:} For any $1\le i< n-1$ we have $\epsilon(a_{ip+1,p}) = \pm\epsilon(a_{(i+1)p+1,p})$.
+
+\begin{proof}Note that $\epsilon(w_{ip+1,p}) = \epsilon((\Psi_{11}^i)_{1p})$ which agrees with ($\epsilon$ of) the $((i-1)p+1,p)$ entry of $\Phi_{\subpp\alpha}^L$. (more general statment replacing $p$ with any $j$ such that $j\le ip$).
+
+	Case $i=1$. For any $j\le 2p$ we have that $\epsilon(w_{2p+1,j})$ agrees with the $(p+1,j)$ entry. Since these are zero for $j>p+1$ we can use the relation in $\mathscr S_{np}$ to get that $1 = \epsilon(w_{2p+1,p+1}) = \epsilon(-a_{2p+1,p+1})$ ($w_{2p+1,p+1}$ is a sum of $-a_{2p+1,p+1}$ and terms with $w_{2p+1,j}$, $j>p+1$ in them). Now, again using the spanning arc relation, 
+			\[0 = \epsilon(w_{2p+1,p}) = \epsilon(-a_{2p+1,p}) - \epsilon(w_{p+1,p}) = -\epsilon(a_{2p+1,p}) + \epsilon(a_{p+1,p}).\]
+
+	What happens for $i=2$? First, the $\epsilon(w_{3p+1,j})=0$ for $2p+1<j\le 3p$. Also, $\epsilon(w_{3p+1,2p+1})=-\epsilon(a_{3p+1,2p+1}) = 1$ and hence 
+			\[0=\epsilon(w_{3p+1,2p}) = -\epsilon(a_{2p+1,2p}) - \epsilon(a_{3p+1,2p}).\]
+	Also $0=\epsilon(w_{3p+1,2p-1}) = -\epsilon(a_{2p+1,2p-1}) -\epsilon(a_{3p+1,2p-1})$, and so on for $\epsilon(w_{3p+1,j})$ with $j=2p-2,\ldots,p$ (to $p$ in particular) so we have $\epsilon(a_{3p+1,p}) = -\epsilon(a_{2p+1,p}) = \epsilon(a_{p+1,p})$. The induction argument should be apparent.
+
+\end{proof}
+
+\end{enumerate}
+
+\end{document}
